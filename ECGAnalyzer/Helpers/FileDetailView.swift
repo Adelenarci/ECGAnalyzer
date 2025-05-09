@@ -78,7 +78,7 @@ struct FileDetailView: View {
         if FileManager.default.fileExists(atPath: path.path) {
             self.fileURL = path
         } else {
-            print("❌ File not found: \(path)")
+            print("File not found: \(path)")
         }
     }
 }
