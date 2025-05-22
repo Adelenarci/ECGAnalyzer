@@ -14,7 +14,7 @@ class OpenAIManager {
     private init() {}
 
     func generateECGComment(ecgCSV: String, height: Double?, weight: Double?, sex: String?, completion: @escaping (String?) -> Void) {
-        guard let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] else {
+        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "OPENAI_API_KEY") as? String else {
             print("Missing API Key")
             completion(nil)
             return
